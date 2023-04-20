@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(16) CSS. Flexible Box Layout</title>
+    <link rel="shortcut icon" href="./assets/images/nature-logo.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- parent
+    -----------------------------------------------------
+    включает флексбокс
+        display: flex;
+    изменяет направление основной оси
+        flex-direction: row, row-reverse, column, column-reverse
+    выравнивание вдоль основной оси
+        justify-content: flex-start, flex-end, center, space-around, space-between, space-evenly
+    выравнивание вдоль поперечной оси
+        align-items: flex-start, flex-end, center, stretch 
+    перенос элементов на следующую строку
+        flex-wrap: wrap, wrap-reverse, nowrap
+    выравнивание строк вдоль поперечной оси
+        align-content: flex-start, flex-end, center, space-around, space-between, space-evenly
+    
+        flex-flow: <flex-direction> <flex-wrap>
+        
+    child
+    ----------------------------------------------------- 
+    определение порядка расположения элемента вдоль главной оси
+        order: <+/-number> default=0;
+    выравнивание вдоль поперечной оси для ДОЧЕРНИХ элементов
+        align-self: flex-start, flex-end, center, stretch 
+    
+    margin дочерних флексов не схлопываются -->
+        
+    <!-- приоритетность ширины
+    content => width/height => flex-basis => max-width/max-height => min-width/min-height -->
+    
+    <!-- .container>.item*20{$} -->
+    <div class="container flex-parent">
+        <div class="item flex-child">1</div>
+        <div class="item flex-child">2</div>
+        <div class="item flex-child">Lorem ipsum dolor sit amet.</div>
+        <div class="item flex-child">4</div>
+        <!-- <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+        <div class="item">16</div>
+        <div class="item">17</div>
+        <div class="item">18</div>
+        <div class="item">19</div>
+        <div class="item">20</div> -->
+    </div>
+
+    <h1>Игра на Flex</h1>
+    <div>
+        <a href="https://flexboxfroggy.com/#uk">Flexbox Froggy</a>
+    </div>
+    <ul>
+        <li>1</li>
+            <ul>
+                <li>justify-content: flex-end;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>2</li>
+            <ul>
+                <li>justify-content: center;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>3</li>
+            <ul>
+                <li>justify-content: space-around;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>4</li>
+            <ul>
+                <li>justify-content: space-between;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>5</li>
+            <ul>
+                <li>align-items: flex-end;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>6</li>
+            <ul>
+                <li>justify-content: center;</li>
+                <li>align-items: center;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>7</li>
+            <ul>
+                <li>justify-content: space-around;</li>
+                <li>align-items: flex-end;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>8</li>
+            <ul>
+                <li>flex-direction: row-reverse;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>9</li>
+            <ul>
+                <li>flex-direction: column;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>10</li>
+            <ul>
+                <li>flex-direction: row-reverse;</li>
+                <li>justify-content: flex-end;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>11</li>
+            <ul>
+                <li>flex-direction: column;</li>
+                <li>justify-content: flex-end;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>12</li>
+            <ul>
+                <li>flex-direction: column-reverse;</li>
+                <li>justify-content: space-between;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>13</li>
+            <ul>
+                <li>flex-direction: row-reverse;</li>
+                <li>justify-content: center;</li>
+                <li>align-items: flex-end;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>14</li>
+            <ul>
+                <li>order: 2;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>15</li>
+            <ul>
+                <li>order: -2;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>16</li>
+            <ul>
+                <li>align-self: flex-end;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>17</li>
+            <ul>
+                <li>order: 1;</li>
+                <li>align-self: flex-end;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>18</li>
+            <ul>
+                <li>flex-wrap: wrap;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>19</li>
+            <ul>
+                <li>flex-direction: column;</li>
+                <li>flex-wrap: wrap;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>20</li>
+            <ul>
+                <li>flex-flow: column wrap;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>21</li>
+            <ul>
+                <li>align-content: flex-start;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>22</li>
+            <ul>
+                <li>align-content: flex-end;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>23</li>
+            <ul>
+                <li>flex-direction: column-reverse;</li>
+                <li>align-content: center;</li>
+            </ul>
+    </ul>
+    <ul>
+        <li>24</li>
+            <ul>
+                <li>flex-flow: wrap-reverse column-reverse;</li>
+                <li>align-content: space-between;</li>
+                <li>justify-content: center;</li>
+            </ul>
+    </ul>
+</body>
+</html>
